@@ -95,3 +95,51 @@
 .hero-zoom {
   animation: hero-zoom 8s ease-in-out infinite;
 }
+
+/* =========================
+   CATEGORY ANIMATIONS
+========================= */
+
+@keyframes category-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes category-float-reverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+}
+
+@keyframes category-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.category-float {
+  animation: category-float 4s ease-in-out infinite;
+}
+
+.category-float-reverse {
+  animation: category-float-reverse 5s ease-in-out infinite;
+}
+
+.category-spin {
+  animation: category-spin 18s linear infinite;
+}

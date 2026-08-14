@@ -2,6 +2,7 @@
 
 import {
   ArrowRight,
+  ArrowUpRight,
   Heart,
   Menu,
   Search,
@@ -17,11 +18,9 @@ const heroImage =
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#FFF9F3] text-[#29152F]">
-
       {/* ================= NAVBAR ================= */}
 
       <nav className="relative z-50 flex h-[82px] items-center justify-between border-b border-[#29152F]/5 px-5 sm:px-8 lg:px-16">
-
         {/* Logo */}
         <a href="#" className="relative shrink-0">
           <div className="text-[25px] font-black tracking-[-1.5px]">
@@ -40,25 +39,21 @@ export default function Home() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 lg:flex">
-          {[
-            "Shop",
-            "New Arrivals",
-            "Best Sellers",
-            "Collections",
-            "About",
-          ].map((item, index) => (
-            <a
-              key={item}
-              href="#"
-              className="group flex items-center gap-1 text-[13px] font-semibold text-[#29152F] transition-colors hover:text-[#F6327B]"
-            >
-              {item}
+          {["Shop", "New Arrivals", "Best Sellers", "Collections", "About"].map(
+            (item, index) => (
+              <a
+                key={item}
+                href="#"
+                className="group flex items-center gap-1 text-[13px] font-semibold text-[#29152F] transition-colors hover:text-[#F6327B]"
+              >
+                {item}
 
-              {(index === 0 || index === 3) && (
-                <span className="text-[#F6327B]">⌄</span>
-              )}
-            </a>
-          ))}
+                {(index === 0 || index === 3) && (
+                  <span className="text-[#F6327B]">⌄</span>
+                )}
+              </a>
+            ),
+          )}
         </div>
 
         {/* Actions */}
@@ -89,7 +84,6 @@ export default function Home() {
       {/* ================= HERO ================= */}
 
       <section className="relative mx-auto grid min-h-[calc(100vh-82px)] max-w-[1500px] grid-cols-1 items-center px-5 pb-16 pt-10 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-14 lg:pb-10 lg:pt-4 xl:px-20">
-
         {/* ================= BACKGROUND DECORATIONS ================= */}
 
         <div className="blob-move pointer-events-none absolute -left-32 top-[30%] h-72 w-72 rounded-full bg-[#FFB5D0]/60 blur-[2px]" />
@@ -97,6 +91,7 @@ export default function Home() {
         <div className="blob-move pointer-events-none absolute -right-32 bottom-10 h-72 w-72 rounded-full bg-[#FFE47A]/60 blur-[2px]" />
 
         {/* Animated sparkle */}
+
         <Sparkles
           className="sparkle-animation absolute left-[4%] top-[12%] rotate-12 text-[#FF6C9E]"
           size={48}
@@ -112,7 +107,6 @@ export default function Home() {
         {/* ================= LEFT CONTENT ================= */}
 
         <div className="relative z-10 flex flex-col items-center text-center lg:items-start lg:pl-8 lg:text-left">
-
           {/* Eyebrow */}
           <div className="mb-6 flex items-center gap-2 text-[11px] font-bold tracking-[2px] text-[#F6327B] sm:text-[13px]">
             <span>✦</span>
@@ -122,22 +116,14 @@ export default function Home() {
 
           {/* Main heading */}
           <h1 className="max-w-[700px] text-[58px] font-black leading-[0.88] tracking-[-4px] text-[#29152F] sm:text-[75px] lg:text-[76px] xl:text-[94px]">
-
             MAKE YOUR
-
             <span className="relative mx-2 inline-block font-serif italic text-[#F6327B]">
               HAIR
-
               <span className="absolute -bottom-1 left-0 h-[5px] w-full -rotate-2 rounded-full bg-[#FFD84D]" />
             </span>
-
             <br />
-
             THE
-
-            <span className="block">
-              STATEMENT.
-            </span>
+            <span className="block">STATEMENT.</span>
           </h1>
 
           {/* Description */}
@@ -149,13 +135,10 @@ export default function Home() {
 
           {/* CTA */}
           <button className="group mt-7 flex items-center gap-5 rounded-full bg-[#F6327B] px-7 py-4 text-sm font-bold tracking-wide text-white shadow-[0_15px_35px_rgba(246,50,123,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#E92870] hover:shadow-[0_20px_40px_rgba(246,50,123,0.35)]">
-
             SHOP NOW
-
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-1">
               <ArrowRight size={16} />
             </span>
-
           </button>
 
           {/* Handwritten note */}
@@ -167,7 +150,6 @@ export default function Home() {
 
           {/* Social proof */}
           <div className="mt-7 hidden items-center gap-3 lg:flex">
-
             <div className="flex -space-x-2">
               {[1, 2, 3].map((item) => (
                 <div
@@ -193,14 +175,12 @@ export default function Home() {
                 Loved by 10,000+ girls
               </p>
             </div>
-
           </div>
         </div>
 
         {/* ================= RIGHT VISUAL ================= */}
 
         <div className="relative mt-12 h-[540px] w-full sm:h-[650px] lg:mt-0 lg:h-[680px]">
-
           {/* Pink background */}
           <div className="absolute right-[5%] top-[7%] h-[82%] w-[78%] rotate-[4deg] rounded-[48%_48%_32%_32%] bg-[#FF5B9A]" />
 
@@ -209,7 +189,6 @@ export default function Home() {
 
           {/* Main image */}
           <div className="absolute right-[10%] top-0 z-10 h-full w-[74%] overflow-hidden rounded-[45%_45%_0_0]">
-
             <img
               src={heroImage}
               alt="Fashion accessories"
@@ -230,14 +209,11 @@ export default function Home() {
 
           {/* Floating scrunchie */}
           <div className="float-slow absolute right-[3%] top-[2%] z-30 flex h-24 w-24 items-center justify-center rounded-full border-[20px] border-[#FF4E94] shadow-xl">
-
             <div className="h-5 w-5 rounded-full bg-[#FFF9F3]" />
-
           </div>
 
           {/* Floating badge */}
           <div className="badge-float absolute right-[-1%] top-[40%] z-40 flex h-32 w-32 flex-col items-center justify-center rounded-full border-2 border-[#FFB6D1] bg-[#FFF9F3] text-center shadow-[0_15px_35px_rgba(42,17,47,0.12)] sm:h-36 sm:w-36">
-
             <span className="text-[11px] font-bold tracking-wide text-[#F6327B]">
               BRIGHTER DAYS
             </span>
@@ -246,26 +222,19 @@ export default function Home() {
               BETTER HAIR
             </span>
 
-            <Heart
-              size={15}
-              fill="#F6327B"
-              className="mt-1 text-[#F6327B]"
-            />
-
+            <Heart size={15} fill="#F6327B" className="mt-1 text-[#F6327B]" />
           </div>
 
           {/* Purple sparkle badge */}
           <div className="sparkle-animation absolute bottom-[13%] right-[14%] z-30 flex h-14 w-14 rotate-12 items-center justify-center rounded-full bg-[#A98BFF] text-white shadow-lg">
             <Sparkles size={25} />
           </div>
-
         </div>
       </section>
 
       {/* ================= FEATURES ================= */}
 
       <section className="relative z-40 mx-auto mb-8 grid w-[92%] max-w-[1300px] grid-cols-1 gap-5 rounded-[28px] bg-white/90 p-6 shadow-[0_20px_60px_rgba(42,17,47,0.08)] backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:p-8">
-
         <Feature
           icon="✦"
           title="Trendy Designs"
@@ -289,12 +258,104 @@ export default function Home() {
           title="Loved by 10K+"
           text="Thousands of happy customers."
         />
+      </section>
+      {/* ================= SHOP BY CATEGORY ================= */}
 
+      <section className="relative overflow-hidden bg-[#FFF1F6] px-5 py-24 sm:px-8 lg:px-14 xl:px-20">
+        {/* Decorative background elements */}
+
+        <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#FFD4E4]/60 blur-3xl" />
+
+        <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#E2D7FF]/60 blur-3xl" />
+
+        <Sparkles
+          className="category-spin absolute right-[8%] top-[12%] text-[#FF6C9E]"
+          size={45}
+          strokeWidth={1.2}
+        />
+
+        <Sparkles
+          className="category-spin absolute bottom-[8%] left-[7%] text-[#A98BFF]"
+          size={32}
+          strokeWidth={1.2}
+        />
+
+        <div className="relative z-10 mx-auto max-w-[1400px]">
+          {/* Section heading */}
+
+          <div className="mb-14 flex flex-col items-center text-center">
+            <div className="mb-4 flex items-center gap-3 text-[11px] font-bold tracking-[3px] text-[#F6327B] sm:text-[12px]">
+              <span>✦</span>
+              FIND YOUR FAVORITE
+              <span>✦</span>
+            </div>
+
+            <h2 className="text-[48px] font-black leading-none tracking-[-3px] text-[#29152F] sm:text-[64px] lg:text-[78px]">
+              SHOP BY{" "}
+              <span className="font-serif italic text-[#F6327B]">
+                CATEGORY.
+              </span>
+            </h2>
+
+            <p className="mt-5 max-w-[520px] text-sm leading-7 text-[#66576A] sm:text-base">
+              From everyday essentials to statement pieces,
+              <br className="hidden sm:block" />
+              find the little things that make your look yours.
+            </p>
+          </div>
+
+          {/* Category Grid */}
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <CategoryCard
+              title="SCRUNCHIES"
+              subtitle="Soft • Fun • Everyday"
+              color="pink"
+              icon="scrunchie"
+              number="01"
+            />
+
+            <CategoryCard
+              title="HAIR CLIPS"
+              subtitle="Cute • Bold • Effortless"
+              color="purple"
+              icon="clip"
+              number="02"
+            />
+
+            <CategoryCard
+              title="BOWS"
+              subtitle="Pretty • Playful • Chic"
+              color="yellow"
+              icon="bow"
+              number="03"
+            />
+
+            <CategoryCard
+              title="HEADBANDS"
+              subtitle="Classic • Cool • Comfy"
+              color="mint"
+              icon="headband"
+              number="04"
+            />
+          </div>
+
+          {/* Bottom line */}
+
+          <div className="mt-14 flex items-center justify-center gap-4">
+            <div className="h-px w-16 bg-[#29152F]/10 sm:w-28" />
+
+            <p className="font-serif text-sm italic text-[#66576A] sm:text-base">
+              Mix it. Match it. Make it yours.
+            </p>
+
+            <div className="h-px w-16 bg-[#29152F]/10 sm:w-28" />
+          </div>
+        </div>
       </section>
     </main>
   );
 }
-
 
 /* ================= FEATURE COMPONENT ================= */
 
@@ -309,20 +370,215 @@ function Feature({
 }) {
   return (
     <div className="flex items-center gap-4 border-[#EDE4E9] px-3 lg:border-r lg:px-7 lg:last:border-r-0">
-
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFE0EB] text-xl text-[#F6327B]">
         {icon}
       </div>
 
       <div>
-        <h3 className="text-sm font-bold text-[#29152F]">
+        <h3 className="text-sm font-bold text-[#29152F]">{title}</h3>
+
+        <p className="mt-1 text-xs leading-5 text-[#766A7B]">{text}</p>
+      </div>
+    </div>
+  );
+}
+
+function CategoryCard({
+  title,
+  subtitle,
+  color,
+  icon,
+  number,
+}: {
+  title: string;
+  subtitle: string;
+  color: "pink" | "purple" | "yellow" | "mint";
+  icon: "scrunchie" | "clip" | "bow" | "headband";
+  number: string;
+}) {
+  const styles = {
+    pink: {
+      card: "bg-[#FF7EAD]",
+      accent: "bg-[#FFD3E3]",
+      text: "text-[#54152F]",
+      button: "bg-[#FFF1F6]",
+    },
+
+    purple: {
+      card: "bg-[#B49AFF]",
+      accent: "bg-[#E5DEFF]",
+      text: "text-[#30204C]",
+      button: "bg-[#F4F0FF]",
+    },
+
+    yellow: {
+      card: "bg-[#FFD84D]",
+      accent: "bg-[#FFF1B5]",
+      text: "text-[#493C08]",
+      button: "bg-[#FFF9DD]",
+    },
+
+    mint: {
+      card: "bg-[#75DFC4]",
+      accent: "bg-[#C9F5E8]",
+      text: "text-[#17483D]",
+      button: "bg-[#EDFFF9]",
+    },
+  };
+
+  const current = styles[color];
+
+  return (
+    <a
+      href="#"
+      className={`group relative h-[390px] overflow-hidden rounded-[34px] ${current.card} p-7 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_50px_rgba(42,17,47,0.15)] sm:h-[430px]`}
+    >
+
+      {/* Number */}
+
+      <span
+        className={`absolute right-7 top-6 text-xs font-bold opacity-50 ${current.text}`}
+      >
+        {number}
+      </span>
+
+
+      {/* Decorative circle */}
+
+      <div
+        className={`absolute -right-20 -top-20 h-52 w-52 rounded-full ${current.accent} opacity-60 transition-transform duration-700 group-hover:scale-125`}
+      />
+
+      <div
+        className={`absolute -bottom-20 -left-20 h-48 w-48 rounded-full ${current.accent} opacity-40`}
+      />
+
+
+      {/* Category icon */}
+
+      <div className="absolute inset-0 flex items-center justify-center">
+
+        <CategoryIcon
+          type={icon}
+          accent={current.accent}
+        />
+
+      </div>
+
+
+      {/* Text */}
+
+      <div className="absolute bottom-7 left-7 right-7 z-10">
+
+        <p
+          className={`mb-1 text-[10px] font-bold tracking-[2px] opacity-60 ${current.text}`}
+        >
+          SHOP
+        </p>
+
+        <h3
+          className={`text-[29px] font-black tracking-[-1.5px] ${current.text}`}
+        >
           {title}
         </h3>
 
-        <p className="mt-1 text-xs leading-5 text-[#766A7B]">
-          {text}
+        <p
+          className={`mt-1 text-xs font-medium opacity-70 ${current.text}`}
+        >
+          {subtitle}
         </p>
+
+        {/* CTA */}
+
+        <div className="mt-5 flex items-center justify-between">
+
+          <span
+            className={`flex h-10 w-10 items-center justify-center rounded-full ${current.button} ${current.text} transition-all duration-300 group-hover:translate-x-2 group-hover:rotate-12`}
+          >
+            <ArrowUpRight size={18} />
+          </span>
+
+          <span
+            className={`text-[10px] font-bold tracking-[2px] opacity-50 ${current.text}`}
+          >
+            EXPLORE
+          </span>
+
+        </div>
+
       </div>
+
+    </a>
+  );
+}
+function CategoryIcon({
+  type,
+  accent,
+}: {
+  type: "scrunchie" | "clip" | "bow" | "headband";
+  accent: string;
+}) {
+  if (type === "scrunchie") {
+    return (
+      <div className="category-float relative">
+
+        <div className="flex h-44 w-44 items-center justify-center rounded-full border-[34px] border-[#F6327B] shadow-[0_20px_35px_rgba(246,50,123,0.25)]">
+
+          <div className="h-14 w-14 rounded-full bg-[#FF7EAD]" />
+
+        </div>
+
+        <div className="absolute -right-5 top-2 h-8 w-8 rounded-full bg-white/50 blur-sm" />
+
+      </div>
+    );
+  }
+
+
+  if (type === "clip") {
+    return (
+      <div className="category-float-reverse relative">
+
+        <div className="relative h-28 w-52 rotate-[-18deg] rounded-full bg-[#7B5BE7] shadow-[0_20px_35px_rgba(60,35,130,0.25)]">
+
+          <div className="absolute left-4 top-3 h-4 w-[80%] rounded-full bg-white/20" />
+
+          <div className="absolute bottom-3 left-6 h-2 w-[70%] rounded-full bg-black/10" />
+
+        </div>
+
+        <div className="absolute -bottom-8 right-0 h-20 w-20 rotate-12 rounded-[50%] border-[14px] border-[#8E75F2]" />
+
+      </div>
+    );
+  }
+
+
+  if (type === "bow") {
+    return (
+      <div className="category-float relative">
+
+        <div className="flex items-center">
+
+          <div className="h-28 w-36 rotate-[-18deg] rounded-[70%_25%_70%_25%] bg-[#F8B900] shadow-[0_20px_30px_rgba(130,90,0,0.2)]" />
+
+          <div className="relative z-10 -mx-7 h-14 w-14 rounded-full bg-[#E3A900] shadow-lg" />
+
+          <div className="h-28 w-36 rotate-[18deg] rounded-[25%_70%_25%_70%] bg-[#F8B900] shadow-[0_20px_30px_rgba(130,90,0,0.2)]" />
+
+        </div>
+
+      </div>
+    );
+  }
+
+
+  return (
+    <div className="category-float-reverse relative">
+
+      <div className="h-24 w-64 rounded-full border-[20px] border-[#249D85] shadow-[0_20px_35px_rgba(20,100,80,0.2)]" />
+
+      <div className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#75DFC4]" />
 
     </div>
   );
