@@ -12,6 +12,7 @@ import {
   Star,
   UserRound,
 } from "lucide-react";
+
 type Product = {
   name: string;
   category: string;
@@ -97,6 +98,7 @@ const customerLove = [
       "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=800&q=85",
   },
 ];
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#FFF9F3] text-[#29152F]">
@@ -876,6 +878,174 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ================= NEWSLETTER + FOOTER ================= */}
+
+      <footer className="relative overflow-hidden bg-[#29152F]">
+        {/* ================= NEWSLETTER ================= */}
+
+        <section className="relative border-b border-white/10 px-5 py-20 sm:px-8 lg:px-14 xl:px-20">
+          {/* Decorative blobs */}
+
+          <div className="pointer-events-none absolute -left-32 -top-32 h-72 w-72 rounded-full bg-[#F6327B]/20 blur-3xl" />
+
+          <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#A98BFF]/15 blur-3xl" />
+
+          <div className="relative z-10 mx-auto max-w-[900px] text-center">
+            {/* Eyebrow */}
+
+            <div className="mb-5 flex items-center justify-center gap-3 text-[10px] font-bold tracking-[3px] text-[#FFD84D] sm:text-xs">
+              <span>✦</span>
+              THE HAIRDAZE CLUB
+              <span>✦</span>
+            </div>
+
+            {/* Heading */}
+
+            <h2 className="text-[44px] font-black leading-[0.9] tracking-[-3px] text-white sm:text-[60px] lg:text-[76px]">
+              GOOD HAIR DAYS
+              <span className="block font-serif italic text-[#F6327B]">
+                START HERE.
+              </span>
+            </h2>
+
+            {/* Description */}
+
+            <p className="mx-auto mt-5 max-w-[500px] text-sm leading-7 text-white/55 sm:text-base">
+              Join the club for first dibs on new drops, exclusive offers and a
+              little extra sparkle in your inbox.
+            </p>
+
+            {/* Newsletter */}
+
+            <form
+              className="mx-auto mt-8 flex max-w-[560px] flex-col gap-3 sm:flex-row"
+              onSubmit={(event) => event.preventDefault()}
+            >
+              <div className="relative flex-1">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  aria-label="Email address"
+                  className="h-14 w-full rounded-full border border-white/10 bg-white/[0.08] px-6 text-sm text-white outline-none placeholder:text-white/35 transition-all duration-300 focus:border-[#F6327B] focus:bg-white/[0.12]"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="group flex h-14 items-center justify-center gap-3 rounded-full bg-[#F6327B] px-7 text-xs font-black tracking-[1.5px] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#FFD84D] hover:text-[#29152F]"
+              >
+                JOIN THE CLUB
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </button>
+            </form>
+
+            <p className="mt-4 text-[9px] tracking-[0.5px] text-white/30">
+              No spam. Just cute things. Unsubscribe anytime.
+            </p>
+          </div>
+        </section>
+
+        {/* ================= MAIN FOOTER ================= */}
+
+        <section className="px-5 py-16 sm:px-8 lg:px-14 xl:px-20">
+          <div className="mx-auto max-w-[1400px]">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+              {/* ================= BRAND ================= */}
+
+              <div>
+                <a
+                  href="#"
+                  className="inline-block text-[36px] font-black tracking-[-2px] text-white"
+                >
+                  hair
+                  <span className="font-serif italic text-[#F6327B]">daze</span>
+                  <span className="text-[#FFD84D]">.</span>
+                </a>
+
+                <p className="mt-5 max-w-[290px] text-sm leading-6 text-white/45">
+                  Making ordinary hair days a little more fun, one accessory at
+                  a time.
+                </p>
+
+                {/* Socials */}
+
+                <div className="mt-7 flex items-center gap-3">
+                  <SocialButton label="ig" />
+
+                  <SocialButton label="tt" />
+
+                  <SocialButton label="pin" />
+                </div>
+              </div>
+
+              {/* ================= SHOP ================= */}
+
+              <FooterColumn
+                title="SHOP"
+                links={[
+                  "All Accessories",
+                  "Scrunchies",
+                  "Hair Clips",
+                  "Bows",
+                  "Headbands",
+                ]}
+              />
+
+              {/* ================= HELP ================= */}
+
+              <FooterColumn
+                title="HELP"
+                links={[
+                  "Contact Us",
+                  "Shipping & Delivery",
+                  "Returns & Exchanges",
+                  "FAQ",
+                  "Track Order",
+                ]}
+              />
+
+              {/* ================= ABOUT ================= */}
+
+              <FooterColumn
+                title="ABOUT"
+                links={[
+                  "Our Story",
+                  "Journal",
+                  "Careers",
+                  "Wholesale",
+                  "Become a Creator",
+                ]}
+              />
+            </div>
+
+            {/* ================= BOTTOM ================= */}
+
+            <div className="mt-16 border-t border-white/10 pt-7">
+              <div className="flex flex-col gap-5 text-[10px] text-white/30 sm:flex-row sm:items-center sm:justify-between">
+                <p>© 2026 HairDaze. Made with love & good hair days.</p>
+
+                <div className="flex flex-wrap gap-5">
+                  <a href="#" className="transition-colors hover:text-white">
+                    Privacy
+                  </a>
+
+                  <a href="#" className="transition-colors hover:text-white">
+                    Terms
+                  </a>
+
+                  <a href="#" className="transition-colors hover:text-white">
+                    Cookies
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
     </main>
   );
 }
@@ -1529,5 +1699,62 @@ function CustomerCard({
         </div>
       </div>
     </article>
+  );
+}
+
+function FooterColumn({
+  title,
+  links,
+}: {
+  title: string;
+  links: string[];
+}) {
+  return (
+    <div>
+
+      <h3 className="text-[10px] font-black tracking-[2px] text-[#FFD84D]">
+        {title}
+      </h3>
+
+      <ul className="mt-5 space-y-3">
+
+        {links.map((link) => (
+          <li key={link}>
+
+            <a
+              href="#"
+              className="text-sm text-white/45 transition-colors duration-200 hover:text-white"
+            >
+              {link}
+            </a>
+
+          </li>
+        ))}
+
+      </ul>
+
+    </div>
+  );
+}
+
+function SocialButton({
+  label,
+}: {
+  label: "ig" | "tt" | "pin";
+}) {
+  const labels = {
+    ig: "IG",
+    tt: "TT",
+    pin: "P",
+  };
+
+  return (
+    <a
+      href="#"
+      aria-label={labels[label]}
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-[10px] font-black text-white/60 transition-all duration-300 hover:-translate-y-1 hover:border-[#F6327B] hover:bg-[#F6327B] hover:text-white"
+    >
+      {labels[label]}
+    </a>
   );
 }
