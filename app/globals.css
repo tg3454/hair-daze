@@ -143,3 +143,209 @@
 .category-spin {
   animation: category-spin 18s linear infinite;
 }
+/* =========================
+   NEW DROP ANIMATIONS
+========================= */
+
+@keyframes drop-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes drop-float-reverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(8deg);
+  }
+
+  50% {
+    transform: translateY(12px) rotate(14deg);
+  }
+}
+
+@keyframes drop-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.drop-float {
+  animation: drop-float 5s ease-in-out infinite;
+}
+
+.drop-float-reverse {
+  animation: drop-float-reverse 6s ease-in-out infinite;
+}
+
+.drop-spin {
+  animation: drop-spin 18s linear infinite;
+}
+
+/* =========================
+   MOOD ANIMATIONS
+========================= */
+
+@keyframes mood-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+@keyframes mood-float-reverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(4deg);
+  }
+
+  50% {
+    transform: translateY(10px) rotate(-4deg);
+  }
+}
+
+@keyframes mood-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mood-shine {
+  0% {
+    transform: translateX(-120%) rotate(15deg);
+  }
+
+  100% {
+    transform: translateX(220%) rotate(15deg);
+  }
+}
+
+.mood-float {
+  animation: mood-float 4.5s ease-in-out infinite;
+}
+
+.mood-float-reverse {
+  animation: mood-float-reverse 5s ease-in-out infinite;
+}
+
+.mood-spin {
+  animation: mood-spin 15s linear infinite;
+}
+
+.mood-shine {
+  animation: mood-shine 3s ease-in-out infinite;
+}
+
+/* =========================
+   CUSTOMER LOVE ANIMATIONS
+========================= */
+
+@keyframes testimonial-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes testimonial-float-reverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(8px) rotate(-1deg);
+  }
+}
+
+@keyframes heart-pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.testimonial-float {
+  animation: testimonial-float 5s ease-in-out infinite;
+}
+
+.testimonial-float-reverse {
+  animation: testimonial-float-reverse 5.5s ease-in-out infinite;
+}
+
+.heart-pop {
+  animation: heart-pop 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   FINAL CTA ANIMATIONS
+========================= */
+
+@keyframes cta-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+
+@keyframes cta-float-reverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(5deg);
+  }
+
+  50% {
+    transform: translateY(12px) rotate(-4deg);
+  }
+}
+
+@keyframes cta-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cta-float {
+  animation: cta-float 4.5s ease-in-out infinite;
+}
+
+.cta-float-reverse {
+  animation: cta-float-reverse 5.5s ease-in-out infinite;
+}
+
+.cta-spin {
+  animation: cta-spin 18s linear infinite;
+}

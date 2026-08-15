@@ -12,7 +12,18 @@ import {
   Star,
   UserRound,
 } from "lucide-react";
-const bestSellers = [
+type Product = {
+  name: string;
+  category: string;
+  price: string;
+  rating: string;
+  reviews: string;
+  badge: string;
+  color: "pink" | "purple" | "yellow" | "mint";
+  icon: "scrunchie" | "clip" | "bow" | "headband";
+};
+
+const bestSellers: Product[] = [
   {
     name: "Cherry Pop Scrunchie",
     category: "Scrunchies",
@@ -57,6 +68,35 @@ const bestSellers = [
 const heroImage =
   "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=90";
 
+const customerLove = [
+  {
+    name: "Ananya",
+    handle: "@ananyasays",
+    text: "The scrunchie is SO cute. It actually stays in my hair all day 😭💕",
+    likes: "248",
+    rotation: "-rotate-2",
+    image:
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85",
+  },
+  {
+    name: "Riya",
+    handle: "@riyaaa",
+    text: "Okay the bow??? Literally obsessed. Already ordering another color.",
+    likes: "391",
+    rotation: "rotate-1",
+    image:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=85",
+  },
+  {
+    name: "Mehak",
+    handle: "@mehak.jpg",
+    text: "Everything arrived SO pretty. Packaging deserves its own five stars ✨",
+    likes: "176",
+    rotation: "rotate-2",
+    image:
+      "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=800&q=85",
+  },
+];
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#FFF9F3] text-[#29152F]">
@@ -112,7 +152,7 @@ export default function Home() {
             <ShoppingBag size={20} />
 
             <span className="absolute right-0 top-0 flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#F6327B] text-[9px] font-bold text-white">
-              2 
+              2
             </span>
           </button>
         </div>
@@ -449,6 +489,393 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ================= NEW DROP ================= */}
+
+      <section className="relative overflow-hidden px-5 py-20 sm:px-8 lg:px-14 xl:px-20">
+        <div className="relative mx-auto min-h-[620px] max-w-[1400px] overflow-hidden rounded-[42px] bg-[#F6327B] sm:min-h-[680px] lg:min-h-[620px]">
+          {/* Background shapes */}
+
+          <div className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-[#FF8FBA] opacity-50" />
+
+          <div className="absolute -bottom-32 left-[35%] h-96 w-96 rounded-full bg-[#D92C70] opacity-50" />
+
+          <div className="absolute -right-32 top-20 h-80 w-80 rounded-full bg-[#FF76AC] opacity-40" />
+
+          {/* Decorative sparkles */}
+
+          <Sparkles
+            className="drop-spin absolute left-[4%] top-[12%] text-white/70"
+            size={48}
+            strokeWidth={1.2}
+          />
+
+          <Sparkles
+            className="drop-spin absolute bottom-[15%] left-[45%] text-[#FFD84D]"
+            size={35}
+            strokeWidth={1.2}
+          />
+
+          {/* Main layout */}
+
+          <div className="relative z-10 grid min-h-[620px] grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
+            {/* ================= LEFT CONTENT ================= */}
+
+            <div className="flex flex-col justify-center px-8 pb-10 pt-16 sm:px-14 lg:px-16 lg:py-16">
+              {/* Eyebrow */}
+
+              <div className="mb-6 flex items-center gap-3 text-[11px] font-bold tracking-[3px] text-white sm:text-xs">
+                <span>✦</span>
+                JUST DROPPED
+                <span>✦</span>
+              </div>
+
+              {/* Heading */}
+
+              <h2 className="max-w-[620px] text-[55px] font-black leading-[0.86] tracking-[-4px] text-white sm:text-[72px] lg:text-[78px] xl:text-[94px]">
+                YOUR NEW
+                <span className="block font-serif italic text-[#FFD84D]">
+                  HAIR
+                </span>
+                OBSESSION.
+              </h2>
+
+              {/* Description */}
+
+              <p className="mt-7 max-w-[440px] text-sm leading-7 text-white/80 sm:text-base">
+                Meet the latest pieces made to turn heads, complete outfits and
+                make ordinary hair days a little more fun.
+              </p>
+
+              {/* CTA */}
+
+              <button className="group mt-8 flex w-fit items-center gap-5 rounded-full bg-white px-7 py-4 text-xs font-black tracking-[1.5px] text-[#F6327B] shadow-[0_15px_35px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FFD84D] hover:text-[#29152F]">
+                SHOP THE DROP
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F6327B] text-white transition-transform duration-300 group-hover:translate-x-1">
+                  <ArrowRight size={15} />
+                </span>
+              </button>
+
+              {/* Tiny note */}
+
+              <p className="mt-6 font-serif text-sm italic text-white/60">
+                limited pieces · big energy ✦
+              </p>
+            </div>
+
+            {/* ================= RIGHT VISUAL ================= */}
+
+            <div className="relative min-h-[400px] lg:min-h-0">
+              {/* Yellow circle */}
+
+              <div className="absolute right-[8%] top-[8%] h-[320px] w-[320px] rounded-full bg-[#FFD84D] sm:h-[420px] sm:w-[420px] lg:h-[470px] lg:w-[470px]" />
+
+              {/* Image */}
+
+              <div className="absolute bottom-0 right-[7%] z-10 h-[88%] w-[68%] overflow-hidden rounded-t-[48%] sm:right-[12%] sm:w-[58%] lg:right-[8%] lg:w-[62%]">
+                <img
+                  src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=90"
+                  alt="New hair accessory collection"
+                  className="h-full w-full object-cover object-center transition-transform duration-1000 hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#29152F]/20 to-transparent" />
+              </div>
+
+              {/* Floating bow */}
+
+              <div className="drop-float absolute left-[2%] top-[15%] z-30 flex items-center">
+                <div className="h-20 w-28 rotate-[-18deg] rounded-[70%_25%_70%_25%] bg-[#A98BFF] shadow-[0_20px_30px_rgba(42,17,47,0.18)] sm:h-24 sm:w-36" />
+
+                <div className="relative z-10 -mx-6 h-12 w-12 rounded-full bg-[#8063E8] shadow-lg" />
+
+                <div className="h-20 w-28 rotate-[18deg] rounded-[25%_70%_25%_70%] bg-[#A98BFF] shadow-[0_20px_30px_rgba(42,17,47,0.18)] sm:h-24 sm:w-36" />
+              </div>
+
+              {/* Floating scrunchie */}
+
+              <div className="drop-float-reverse absolute bottom-[10%] left-[3%] z-30 flex h-28 w-28 items-center justify-center rounded-full border-[22px] border-[#FFB5D0] bg-transparent shadow-xl sm:h-36 sm:w-36 sm:border-[28px]">
+                <div className="h-8 w-8 rounded-full bg-[#F6327B]" />
+              </div>
+
+              {/* Limited drop badge */}
+
+              <div className="absolute right-[1%] top-[15%] z-40 flex h-28 w-28 items-center justify-center sm:right-[2%] sm:h-36 sm:w-36">
+                <div className="drop-spin absolute inset-0 rounded-full border border-dashed border-white/70" />
+
+                <div className="relative flex h-20 w-20 flex-col items-center justify-center rounded-full bg-[#29152F] text-center text-white shadow-xl sm:h-24 sm:w-24">
+                  <Sparkles size={14} className="mb-1 text-[#FFD84D]" />
+
+                  <span className="text-[8px] font-black tracking-[1.5px]">
+                    LIMITED
+                  </span>
+
+                  <span className="text-[8px] font-black tracking-[1.5px]">
+                    DROP
+                  </span>
+                </div>
+              </div>
+
+              {/* Tiny stars */}
+
+              <div className="absolute bottom-[18%] right-[6%] z-30 text-[#FFD84D]">
+                <Sparkles size={32} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SHOP BY MOOD ================= */}
+
+      <section className="relative overflow-hidden bg-[#FFF9F3] px-5 py-24 sm:px-8 lg:px-14 xl:px-20">
+        {/* Background decoration */}
+
+        <div className="pointer-events-none absolute left-[-120px] top-[30%] h-72 w-72 rounded-full bg-[#FFD9E7]/50 blur-3xl" />
+
+        <div className="pointer-events-none absolute right-[-120px] bottom-[10%] h-80 w-80 rounded-full bg-[#DCD2FF]/50 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-[1400px]">
+          {/* ================= HEADER ================= */}
+
+          <div className="mb-14 flex flex-col items-center text-center">
+            <div className="mb-4 flex items-center gap-3 text-[11px] font-bold tracking-[3px] text-[#F6327B] sm:text-xs">
+              <span>✦</span>
+              FIND YOUR MOOD
+              <span>✦</span>
+            </div>
+
+            <h2 className="text-[50px] font-black leading-[0.9] tracking-[-3px] text-[#29152F] sm:text-[65px] lg:text-[82px]">
+              YOUR HAIR.
+              <span className="block font-serif italic text-[#F6327B]">
+                YOUR VIBE.
+              </span>
+            </h2>
+
+            <p className="mt-5 max-w-[500px] text-sm leading-7 text-[#66576A] sm:text-base">
+              Pick a mood. Pick a look.
+              <br className="hidden sm:block" />
+              We'll handle the cute part.
+            </p>
+          </div>
+
+          {/* ================= MOOD GRID ================= */}
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <MoodCard
+              title="COQUETTE"
+              subtitle="Bows, ribbons & all things pretty."
+              number="01"
+              mood="coquette"
+            />
+
+            <MoodCard
+              title="Y2K"
+              subtitle="Bold colors. Big energy. Zero chill."
+              number="02"
+              mood="y2k"
+            />
+
+            <MoodCard
+              title="CLEAN GIRL"
+              subtitle="Simple, polished & effortlessly cool."
+              number="03"
+              mood="clean"
+            />
+
+            <MoodCard
+              title="COLOR POP"
+              subtitle="Because boring was never the plan."
+              number="04"
+              mood="color"
+            />
+          </div>
+
+          {/* Bottom line */}
+
+          <div className="mt-14 flex items-center justify-center gap-4">
+            <div className="h-px w-14 bg-[#29152F]/10 sm:w-24" />
+
+            <p className="font-serif text-sm italic text-[#66576A] sm:text-base">
+              Wear your mood ✦
+            </p>
+
+            <div className="h-px w-14 bg-[#29152F]/10 sm:w-24" />
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CUSTOMER LOVE ================= */}
+
+      <section className="relative overflow-hidden bg-[#FFF1F6] px-5 py-24 sm:px-8 lg:px-14 xl:px-20">
+        {/* Background blobs */}
+
+        <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#FFD2E3]/70 blur-3xl" />
+
+        <div className="pointer-events-none absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-[#DDD3FF]/60 blur-3xl" />
+
+        {/* Floating hearts */}
+
+        <Heart
+          className="heart-pop absolute left-[7%] top-[17%] text-[#F6327B]/30"
+          size={34}
+          fill="currentColor"
+        />
+
+        <Heart
+          className="heart-pop absolute right-[8%] top-[25%] text-[#F6327B]/20"
+          size={25}
+          fill="currentColor"
+        />
+
+        <div className="relative z-10 mx-auto max-w-[1400px]">
+          {/* ================= HEADER ================= */}
+
+          <div className="mb-14 flex flex-col items-center text-center">
+            <div className="mb-4 flex items-center gap-3 text-[11px] font-bold tracking-[3px] text-[#F6327B] sm:text-xs">
+              <span>✦</span>
+              CUSTOMER LOVE
+              <span>✦</span>
+            </div>
+
+            <h2 className="text-[50px] font-black leading-[0.9] tracking-[-3px] text-[#29152F] sm:text-[65px] lg:text-[82px]">
+              HAIRDAZE{" "}
+              <span className="font-serif italic text-[#F6327B]">IRL.</span>
+            </h2>
+
+            <p className="mt-5 max-w-[500px] text-sm leading-7 text-[#66576A] sm:text-base">
+              Cute hair. Happy customers.
+              <br className="hidden sm:block" />
+              We love to see it.
+            </p>
+          </div>
+
+          {/* ================= TESTIMONIAL CARDS ================= */}
+
+          <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
+            {customerLove.map((review, index) => (
+              <CustomerCard key={review.handle} review={review} index={index} />
+            ))}
+          </div>
+
+          {/* ================= HASHTAG ================= */}
+
+          <div className="mt-20 flex flex-col items-center">
+            <div className="flex items-center gap-3">
+              <div className="h-px w-12 bg-[#29152F]/10 sm:w-20" />
+
+              <span className="text-[10px] font-bold tracking-[3px] text-[#9A8E9D]">
+                SEEN IT. LOVED IT. TAGGED IT.
+              </span>
+
+              <div className="h-px w-12 bg-[#29152F]/10 sm:w-20" />
+            </div>
+
+            <p className="mt-5 text-[38px] font-black tracking-[-2px] text-[#F6327B] sm:text-[48px]">
+              #HAIRDAZE
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* ================= FINAL CTA ================= */}
+
+      <section className="relative overflow-hidden px-5 py-20 sm:px-8 lg:px-14 xl:px-20">
+        <div className="relative mx-auto min-h-[620px] max-w-[1400px] overflow-hidden rounded-[42px] bg-[#29152F]">
+          {/* ================= BACKGROUND GLOW ================= */}
+
+          <div className="absolute left-[-15%] top-[-25%] h-[500px] w-[500px] rounded-full bg-[#F6327B]/30 blur-3xl" />
+
+          <div className="absolute bottom-[-30%] right-[-10%] h-[550px] w-[550px] rounded-full bg-[#A98BFF]/20 blur-3xl" />
+
+          <div className="absolute left-[35%] top-[35%] h-[300px] w-[300px] rounded-full bg-[#FFD84D]/10 blur-3xl" />
+
+          {/* ================= SPARKLES ================= */}
+
+          <Sparkles
+            className="cta-spin absolute left-[8%] top-[12%] text-[#FFD84D]"
+            size={45}
+            strokeWidth={1.2}
+          />
+
+          <Sparkles
+            className="cta-spin absolute right-[10%] top-[18%] text-[#F6327B]"
+            size={35}
+            strokeWidth={1.2}
+          />
+
+          <Sparkles
+            className="cta-spin absolute bottom-[14%] left-[18%] text-[#A98BFF]"
+            size={30}
+            strokeWidth={1.2}
+          />
+
+          {/* ================= FLOATING BOW ================= */}
+
+          <div className="cta-float absolute left-[4%] top-[30%] z-20 hidden items-center lg:flex">
+            <div className="h-24 w-32 rotate-[-18deg] rounded-[70%_25%_70%_25%] bg-[#F6327B] shadow-[0_25px_45px_rgba(246,50,123,0.25)]" />
+
+            <div className="relative z-10 -mx-7 h-14 w-14 rounded-full bg-[#D92667] shadow-lg" />
+
+            <div className="h-24 w-32 rotate-[18deg] rounded-[25%_70%_25%_70%] bg-[#F6327B] shadow-[0_25px_45px_rgba(246,50,123,0.25)]" />
+          </div>
+
+          {/* ================= FLOATING SCRUNCHIE ================= */}
+
+          <div className="cta-float-reverse absolute bottom-[15%] right-[5%] z-20 hidden h-40 w-40 items-center justify-center rounded-full border-[28px] border-[#FFD84D] lg:flex">
+            <div className="h-10 w-10 rounded-full bg-[#29152F]" />
+          </div>
+
+          {/* ================= MAIN CONTENT ================= */}
+
+          <div className="relative z-30 flex min-h-[620px] flex-col items-center justify-center px-6 py-20 text-center">
+            {/* Eyebrow */}
+
+            <div className="mb-7 flex items-center gap-3 text-[10px] font-bold tracking-[3px] text-[#FFD84D] sm:text-xs">
+              <span>✦</span>
+              ONE MORE THING
+              <span>✦</span>
+            </div>
+
+            {/* Heading */}
+
+            <h2 className="max-w-[950px] text-[58px] font-black leading-[0.86] tracking-[-4px] text-white sm:text-[78px] lg:text-[110px]">
+              YOUR HAIR
+              <span className="block font-serif italic text-[#F6327B]">
+                CALLED.
+              </span>
+            </h2>
+
+            {/* Subheading */}
+
+            <p className="mt-7 max-w-[540px] text-base leading-7 text-white/60 sm:text-lg">
+              It wants something cute.
+              <br />
+              Who are we to say no?
+            </p>
+
+            {/* CTA */}
+
+            <button className="group mt-9 flex items-center gap-5 rounded-full bg-[#F6327B] px-8 py-4 text-xs font-black tracking-[1.5px] text-white shadow-[0_20px_50px_rgba(246,50,123,0.3)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FFD84D] hover:text-[#29152F] hover:shadow-[0_25px_60px_rgba(255,216,77,0.2)]">
+              SHOP ALL ACCESSORIES
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#F6327B] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#29152F]">
+                <ArrowRight size={16} />
+              </span>
+            </button>
+
+            {/* Bottom decorative line */}
+
+            <div className="mt-12 flex items-center gap-4 text-white/30">
+              <div className="h-px w-10 bg-white/20 sm:w-20" />
+
+              <span className="font-serif text-sm italic">
+                made for your main character moments ✦
+              </span>
+
+              <div className="h-px w-10 bg-white/20 sm:w-20" />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
@@ -647,20 +1074,7 @@ function CategoryIcon({
   );
 }
 
-function ProductCard({
-  product,
-}: {
-  product: {
-    name: string;
-    category: string;
-    price: string;
-    rating: string;
-    reviews: string;
-    badge: string;
-    color: "pink" | "purple" | "yellow" | "mint";
-    icon: "scrunchie" | "clip" | "bow" | "headband";
-  };
-}) {
+function ProductCard({ product }: { product: Product }) {
   const styles = {
     pink: {
       background: "bg-[#FFE0EB]",
@@ -691,13 +1105,11 @@ function ProductCard({
 
   return (
     <div className="group relative">
-
       {/* Product Image Area */}
 
       <div
         className={`relative aspect-[0.88] overflow-hidden rounded-[28px] ${current.background}`}
       >
-
         {/* Badge */}
 
         {product.badge && (
@@ -715,45 +1127,31 @@ function ProductCard({
           <Heart size={16} />
         </button>
 
-
         {/* Decorative circles */}
 
         <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/30 transition-transform duration-700 group-hover:scale-125" />
 
         <div className="absolute -bottom-20 -left-16 h-44 w-44 rounded-full bg-white/20" />
 
-
         {/* Product artwork */}
 
         <div className="absolute inset-0 flex items-center justify-center">
-
           <div className="transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3">
-            <ProductArtwork
-              type={product.icon}
-              color={current.icon}
-            />
+            <ProductArtwork type={product.icon} color={current.icon} />
           </div>
-
         </div>
-
 
         {/* Quick add */}
 
         <button className="absolute bottom-4 left-4 right-4 z-20 flex translate-y-3 items-center justify-center gap-2 rounded-full bg-[#29152F] py-3 text-[10px] font-bold tracking-[1.5px] text-white opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#F6327B]">
-
           <Plus size={15} />
-
           ADD TO BAG
-
         </button>
-
       </div>
-
 
       {/* Product information */}
 
       <div className="px-1 pt-4">
-
         <p className="text-[9px] font-bold tracking-[1.5px] text-[#9A8E9D]">
           {product.category.toUpperCase()}
         </p>
@@ -762,20 +1160,11 @@ function ProductCard({
           {product.name}
         </h3>
 
-
         <div className="mt-2 flex items-center justify-between">
-
-          <p className="text-sm font-black text-[#29152F]">
-            {product.price}
-          </p>
+          <p className="text-sm font-black text-[#29152F]">{product.price}</p>
 
           <div className="flex items-center gap-1">
-
-            <Star
-              size={12}
-              fill="#FFD84D"
-              className="text-[#FFD84D]"
-            />
+            <Star size={12} fill="#FFD84D" className="text-[#FFD84D]" />
 
             <span className="text-[10px] font-bold text-[#66576A]">
               {product.rating}
@@ -784,13 +1173,9 @@ function ProductCard({
             <span className="hidden text-[9px] text-[#9A8E9D] sm:inline">
               ({product.reviews})
             </span>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 }
@@ -804,7 +1189,6 @@ function ProductArtwork({
   if (type === "scrunchie") {
     return (
       <div className="relative">
-
         <div
           className="flex h-40 w-40 items-center justify-center rounded-full border-[28px] shadow-[0_25px_40px_rgba(42,17,47,0.12)] sm:h-48 sm:w-48"
           style={{ borderColor: color }}
@@ -819,41 +1203,33 @@ function ProductArtwork({
           className="absolute -right-3 top-2 h-6 w-6 rounded-full border-4 border-white/60"
           style={{ backgroundColor: color }}
         />
-
       </div>
     );
   }
 
-
   if (type === "clip") {
     return (
       <div className="relative">
-
         <div
           className="h-24 w-48 rotate-[-18deg] rounded-full shadow-[0_25px_40px_rgba(42,17,47,0.15)] sm:h-28 sm:w-56"
           style={{ backgroundColor: color }}
         >
-
           <div className="ml-5 pt-3">
             <div className="h-3 w-[80%] rounded-full bg-white/20" />
           </div>
-
         </div>
 
         <div
           className="absolute -bottom-8 right-0 h-16 w-16 rotate-12 rounded-full border-[12px]"
           style={{ borderColor: color }}
         />
-
       </div>
     );
   }
 
-
   if (type === "bow") {
     return (
       <div className="flex items-center">
-
         <div
           className="h-24 w-28 rotate-[-18deg] rounded-[70%_25%_70%_25%] shadow-[0_20px_30px_rgba(42,17,47,0.12)] sm:h-28 sm:w-36"
           style={{ backgroundColor: color }}
@@ -868,15 +1244,12 @@ function ProductArtwork({
           className="h-24 w-28 rotate-[18deg] rounded-[25%_70%_25%_70%] shadow-[0_20px_30px_rgba(42,17,47,0.12)] sm:h-28 sm:w-36"
           style={{ backgroundColor: color }}
         />
-
       </div>
     );
   }
 
-
   return (
     <div className="relative">
-
       <div
         className="h-20 w-56 rounded-full border-[17px] shadow-[0_25px_40px_rgba(42,17,47,0.12)] sm:h-24 sm:w-64"
         style={{ borderColor: color }}
@@ -886,7 +1259,275 @@ function ProductArtwork({
         className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{ backgroundColor: color }}
       />
-
     </div>
+  );
+}
+
+function MoodCard({
+  title,
+  subtitle,
+  number,
+  mood,
+}: {
+  title: string;
+  subtitle: string;
+  number: string;
+  mood: "coquette" | "y2k" | "clean" | "color";
+}) {
+  const styles = {
+    coquette: {
+      background: "bg-[#FFB8D2]",
+      text: "text-[#54152F]",
+      button: "bg-[#FFF0F6]",
+    },
+
+    y2k: {
+      background: "bg-[#9D82F7]",
+      text: "text-white",
+      button: "bg-white/90",
+    },
+
+    clean: {
+      background: "bg-[#CBEBDD]",
+      text: "text-[#17483D]",
+      button: "bg-[#F4FFF9]",
+    },
+
+    color: {
+      background: "bg-[#FFD84D]",
+      text: "text-[#493C08]",
+      button: "bg-[#FFF8D7]",
+    },
+  };
+
+  const current = styles[mood];
+
+  return (
+    <a
+      href="#"
+      className={`group relative min-h-[390px] overflow-hidden rounded-[38px] ${current.background} p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(42,17,47,0.15)] sm:min-h-[450px] sm:p-10`}
+    >
+      {/* Number */}
+
+      <span
+        className={`absolute right-8 top-7 text-[11px] font-black tracking-[2px] opacity-40 ${current.text}`}
+      >
+        {number}
+      </span>
+
+      {/* Shine effect */}
+
+      {mood === "clean" && (
+        <div className="pointer-events-none absolute inset-y-[-50%] left-[-30%] w-20 rotate-[15deg] bg-white/30 blur-md transition-transform duration-1000 group-hover:translate-x-[600px]" />
+      )}
+
+      {/* ================= ARTWORK ================= */}
+
+      <MoodArtwork mood={mood} />
+
+      {/* ================= CONTENT ================= */}
+
+      <div className="absolute bottom-7 left-7 right-7 z-20 sm:bottom-9 sm:left-10 sm:right-10">
+        <p
+          className={`mb-2 text-[10px] font-bold tracking-[2px] opacity-60 ${current.text}`}
+        >
+          MOOD {number}
+        </p>
+
+        <h3
+          className={`text-[34px] font-black leading-none tracking-[-2px] sm:text-[42px] ${current.text}`}
+        >
+          {title}
+        </h3>
+
+        <div className="mt-3 flex items-end justify-between gap-5">
+          <p
+            className={`max-w-[260px] text-xs leading-5 opacity-70 ${current.text}`}
+          >
+            {subtitle}
+          </p>
+
+          <span
+            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${current.button} ${current.text} transition-all duration-300 group-hover:translate-x-2 group-hover:-rotate-12`}
+          >
+            <ArrowUpRight size={19} />
+          </span>
+        </div>
+      </div>
+    </a>
+  );
+}
+
+function MoodArtwork({
+  mood,
+}: {
+  mood: "coquette" | "y2k" | "clean" | "color";
+}) {
+  /* ================= COQUETTE ================= */
+
+  if (mood === "coquette") {
+    return (
+      <div className="mood-float absolute right-[10%] top-[12%] transition-transform duration-700 group-hover:scale-110">
+        <div className="flex items-center">
+          <div className="h-28 w-36 rotate-[-18deg] rounded-[70%_25%_70%_25%] bg-[#F6327B] shadow-[0_20px_35px_rgba(120,20,70,0.2)] sm:h-36 sm:w-44" />
+
+          <div className="relative z-10 -mx-8 h-16 w-16 rounded-full bg-[#D92667] shadow-lg" />
+
+          <div className="h-28 w-36 rotate-[18deg] rounded-[25%_70%_25%_70%] bg-[#F6327B] shadow-[0_20px_35px_rgba(120,20,70,0.2)] sm:h-36 sm:w-44" />
+        </div>
+
+        <div className="absolute -right-5 -top-7 font-serif text-4xl text-white">
+          ♡
+        </div>
+      </div>
+    );
+  }
+
+  /* ================= Y2K ================= */
+
+  if (mood === "y2k") {
+    return (
+      <div className="absolute right-[8%] top-[10%]">
+        <div className="mood-spin flex h-40 w-40 items-center justify-center rounded-full border-[12px] border-[#D8CCFF] shadow-[0_20px_40px_rgba(42,17,47,0.2)] sm:h-52 sm:w-52">
+          <div className="h-20 w-20 rounded-full bg-[#7B5BE7] shadow-[inset_0_0_30px_rgba(255,255,255,0.3)] sm:h-28 sm:w-28" />
+        </div>
+
+        <Sparkles
+          className="absolute -right-7 top-2 text-[#FFD84D]"
+          size={38}
+        />
+
+        <Sparkles className="absolute -bottom-5 -left-8 text-white" size={28} />
+      </div>
+    );
+  }
+
+  /* ================= CLEAN GIRL ================= */
+
+  if (mood === "clean") {
+    return (
+      <div className="mood-float-reverse absolute right-[8%] top-[13%]">
+        <div className="relative">
+          <div className="h-48 w-48 rounded-full border-[22px] border-[#249D85] bg-[#EDFDF7] shadow-[0_25px_40px_rgba(20,100,80,0.18)] sm:h-56 sm:w-56 sm:border-[26px]" />
+
+          <div className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#75DFC4]" />
+
+          <div className="absolute -right-8 top-5 h-10 w-10 rounded-full bg-white/60" />
+        </div>
+      </div>
+    );
+  }
+
+  /* ================= COLOR POP ================= */
+
+  return (
+    <div className="absolute right-[7%] top-[10%]">
+      <div className="mood-float relative h-56 w-56 sm:h-64 sm:w-64">
+        <div className="absolute left-5 top-2 h-28 w-28 rounded-full bg-[#F6327B] shadow-lg" />
+
+        <div className="absolute right-0 top-8 h-24 w-24 rounded-full bg-[#A98BFF] shadow-lg" />
+
+        <div className="absolute bottom-0 left-16 h-32 w-32 rounded-full bg-[#55D8BB] shadow-lg" />
+
+        <div className="absolute bottom-7 right-7 h-16 w-16 rounded-full bg-[#FF8B3D] shadow-lg" />
+
+        <div className="absolute left-[45%] top-[40%] h-12 w-12 rounded-full bg-[#FFD84D] shadow-lg" />
+      </div>
+
+      <Sparkles className="absolute -right-5 -top-4 text-[#F6327B]" size={34} />
+    </div>
+  );
+}
+
+function CustomerCard({
+  review,
+  index,
+}: {
+  review: {
+    name: string;
+    handle: string;
+    text: string;
+    likes: string;
+    rotation: string;
+    image: string;
+  };
+  index: number;
+}) {
+  return (
+    <article
+      className={`group ${review.rotation} ${
+        index === 1 ? "testimonial-float-reverse" : "testimonial-float"
+      }`}
+    >
+      <div className="relative overflow-hidden rounded-[30px] bg-white p-3 shadow-[0_20px_50px_rgba(42,17,47,0.08)] transition-all duration-500 group-hover:-translate-y-3 group-hover:rotate-0 group-hover:shadow-[0_30px_70px_rgba(42,17,47,0.15)]">
+        {/* ================= IMAGE ================= */}
+
+        <div className="relative aspect-[4/4.4] overflow-hidden rounded-[22px]">
+          <img
+            src={review.image}
+            alt={`${review.name} wearing HairDaze accessories`}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+
+          {/* Gradient */}
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+          {/* Instagram-like overlay */}
+
+          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+            <div className="flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-xs font-bold backdrop-blur">
+                {review.name.charAt(0)}
+              </div>
+
+              <span className="text-xs font-bold">{review.handle}</span>
+            </div>
+
+            <div className="flex items-center gap-1 text-xs">
+              <Heart size={15} fill="white" />
+
+              {review.likes}
+            </div>
+          </div>
+        </div>
+
+        {/* ================= REVIEW ================= */}
+
+        <div className="px-3 pb-4 pt-5">
+          {/* Stars */}
+
+          <div className="mb-3 flex items-center gap-1">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <Star
+                key={star}
+                size={13}
+                fill="#FFD84D"
+                className="text-[#FFD84D]"
+              />
+            ))}
+
+            <span className="ml-2 flex items-center gap-1 text-[9px] font-bold tracking-[0.5px] text-[#7D707F]">
+              VERIFIED
+              <span className="flex h-3 w-3 items-center justify-center rounded-full bg-[#3B82F6] text-[7px] text-white">
+                ✓
+              </span>
+            </span>
+          </div>
+
+          {/* Quote */}
+
+          <p className="text-sm font-medium leading-6 text-[#29152F]">
+            "{review.text}"
+          </p>
+
+          {/* Name */}
+
+          <p className="mt-4 text-[10px] font-bold tracking-[1.5px] text-[#9A8E9D]">
+            — {review.name.toUpperCase()}
+          </p>
+        </div>
+      </div>
+    </article>
   );
 }
