@@ -37,12 +37,15 @@ export function BestSellers() {
 
         {/* View all */}
         <div className="mt-14 flex justify-center">
-          <button className="group flex items-center gap-4 rounded-full border-2 border-[#29152F] px-7 py-3.5 text-xs font-bold tracking-[1.5px] text-[#29152F] transition-all duration-300 hover:bg-[#29152F] hover:text-white">
+          <a
+            href="/shop"
+            className="group flex items-center gap-4 rounded-full border-2 border-[#29152F] px-7 py-3.5 text-xs font-bold tracking-[1.5px] text-[#29152F] transition-all duration-300 hover:bg-[#29152F] hover:text-white"
+          >
             VIEW ALL PRODUCTS
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               <ArrowRight size={16} />
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </section>

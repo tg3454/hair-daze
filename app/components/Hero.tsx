@@ -47,12 +47,15 @@ export function Hero() {
         </p>
 
         {/* CTA */}
-        <button className="group mt-7 flex items-center gap-5 rounded-full bg-[#F6327B] px-7 py-4 text-sm font-bold tracking-wide text-white shadow-[0_15px_35px_rgba(246,50,123,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#E92870] hover:shadow-[0_20px_40px_rgba(246,50,123,0.35)]">
+        <a
+          href="/shop"
+          className="group mt-7 flex items-center gap-5 rounded-full bg-[#F6327B] px-7 py-4 text-sm font-bold tracking-wide text-white shadow-[0_15px_35px_rgba(246,50,123,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#E92870] hover:shadow-[0_20px_40px_rgba(246,50,123,0.35)]"
+        >
           SHOP NOW
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-1">
             <ArrowRight size={16} />
           </span>
-        </button>
+        </a>
 
         {/* Handwritten note */}
         <div className="mt-6 ml-40 rotate-[-6deg] font-serif text-sm italic text-[#F6327B]">

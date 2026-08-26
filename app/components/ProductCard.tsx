@@ -1,5 +1,6 @@
 import { Heart, Plus, Star } from "lucide-react";
 import type { Product, ProductIcon } from "../types";
+import { useCart } from "../context/CartContext";
 
 const productStyles = {
   pink: {
@@ -101,6 +102,12 @@ function ProductArtwork({
 
 export function ProductCard({ product }: { product: Product }) {
   const current = productStyles[product.color];
+  const { addItem, openCart } = useCart();
+
+  const handleAddToBag = () => {
+    addItem(product);
+    openCart();
+  };
 
   return (
     <div className="group relative">
@@ -127,15 +134,29 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/30 transition-transform duration-700 group-hover:scale-125" />
         <div className="absolute -bottom-20 -left-16 h-44 w-44 rounded-full bg-white/20" />
 
-        {/* Product artwork */}
+        {/* Product content: image or artwork */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3">
-            <ProductArtwork type={product.icon} color={current.icon} />
-          </div>
+          {product.image ? (
+            <div className="h-full w-full transition-transform duration-700 group-hover:scale-110">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="h-full w-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+            </div>
+          ) : (
+            <div className="transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3">
+              <ProductArtwork type={product.icon} color={current.icon} />
+            </div>
+          )}
         </div>
 
         {/* Quick add */}
-        <button className="absolute bottom-4 left-4 right-4 z-20 flex translate-y-3 items-center justify-center gap-2 rounded-full bg-[#29152F] py-3 text-[10px] font-bold tracking-[1.5px] text-white opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#F6327B]">
+        <button
+          onClick={handleAddToBag}
+          className="absolute bottom-4 left-4 right-4 z-20 flex translate-y-3 items-center justify-center gap-2 rounded-full bg-[#29152F] py-3 text-[10px] font-bold tracking-[1.5px] text-white opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#F6327B]"
+        >
           <Plus size={15} />
           ADD TO BAG
         </button>

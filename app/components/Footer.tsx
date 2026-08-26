@@ -15,6 +15,15 @@ function SocialButton({ label }: { label: "ig" | "tt" | "pin" }) {
   );
 }
 
+const FOOTER_LINK_MAP: Record<string, string> = {
+  "All Accessories": "/shop",
+  "Scrunchies": "/shop/scrunchies",
+  "Hair Clips": "/shop/hair-clips",
+  "Bows": "/shop/bows",
+  "Headbands": "/shop/headbands",
+  "Our Story": "/about",
+};
+
 function FooterColumn({
   title,
   links,
@@ -31,7 +40,7 @@ function FooterColumn({
         {links.map((link) => (
           <li key={link}>
             <a
-              href="#"
+              href={FOOTER_LINK_MAP[link] || "#"}
               className="text-sm text-white/45 transition-colors duration-200 hover:text-white"
             >
               {link}

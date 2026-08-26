@@ -63,12 +63,15 @@ export function FinalCTA() {
           </p>
 
           {/* CTA */}
-          <button className="group mt-9 flex items-center gap-5 rounded-full bg-[#F6327B] px-8 py-4 text-xs font-black tracking-[1.5px] text-white shadow-[0_20px_50px_rgba(246,50,123,0.3)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FFD84D] hover:text-[#29152F] hover:shadow-[0_25px_60px_rgba(255,216,77,0.2)]">
+          <a
+            href="/shop"
+            className="group mt-9 flex items-center gap-5 rounded-full bg-[#F6327B] px-8 py-4 text-xs font-black tracking-[1.5px] text-white shadow-[0_20px_50px_rgba(246,50,123,0.3)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FFD84D] hover:text-[#29152F] hover:shadow-[0_25px_60px_rgba(255,216,77,0.2)]"
+          >
             SHOP ALL ACCESSORIES
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#F6327B] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#29152F]">
               <ArrowRight size={16} />
             </span>
-          </button>
+          </a>
 
           {/* Bottom decorative line */}
           <div className="mt-12 flex items-center gap-4 text-white/30">

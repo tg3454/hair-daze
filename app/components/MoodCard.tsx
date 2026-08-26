@@ -81,6 +81,13 @@ const moodStyles = {
   },
 };
 
+const moodRoutes: Record<string, string> = {
+  coquette: "/vibe/coquette",
+  y2k: "/vibe/y2k",
+  clean: "/vibe/clean-girl",
+  color: "/vibe/color-pop",
+};
+
 export function MoodCard({
   title,
   subtitle,
@@ -96,7 +103,7 @@ export function MoodCard({
 
   return (
     <a
-      href="#"
+      href={moodRoutes[mood] || "/shop"}
       className={`group relative min-h-[390px] overflow-hidden rounded-[38px] ${current.background} p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(42,17,47,0.15)] sm:min-h-[450px] sm:p-10`}
     >
       {/* Number */}

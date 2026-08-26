@@ -49,12 +49,15 @@ export function NewDrop() {
             </p>
 
             {/* CTA */}
-            <button className="group mt-8 flex w-fit items-center gap-5 rounded-full bg-white px-7 py-4 text-xs font-black tracking-[1.5px] text-[#F6327B] shadow-[0_15px_35px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FFD84D] hover:text-[#29152F]">
+            <a
+              href="/new-arrivals"
+              className="group mt-8 flex w-fit items-center gap-5 rounded-full bg-white px-7 py-4 text-xs font-black tracking-[1.5px] text-[#F6327B] shadow-[0_15px_35px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FFD84D] hover:text-[#29152F]"
+            >
               SHOP THE DROP
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F6327B] text-white transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowRight size={15} />
               </span>
-            </button>
+            </a>
 
             {/* Tiny note */}
             <p className="mt-6 font-serif text-sm italic text-white/60">

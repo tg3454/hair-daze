@@ -78,6 +78,13 @@ function CategoryIcon({
   );
 }
 
+const CATEGORY_ROUTES: Record<string, string> = {
+  SCRUNCHIES: "/shop/scrunchies",
+  "HAIR CLIPS": "/shop/hair-clips",
+  BOWS: "/shop/bows",
+  HEADBANDS: "/shop/headbands",
+};
+
 export function CategoryCard({
   title,
   subtitle,
@@ -95,7 +102,7 @@ export function CategoryCard({
 
   return (
     <a
-      href="#"
+      href={CATEGORY_ROUTES[title] || "/shop"}
       className={`group relative h-[390px] overflow-hidden rounded-[34px] ${current.card} p-7 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_50px_rgba(42,17,47,0.15)] sm:h-[430px]`}
     >
       {/* Number */}
