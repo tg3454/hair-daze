@@ -20,6 +20,7 @@ export default function Home() {
       <CartProvider>
         <main className="min-h-screen overflow-hidden bg-[#FFF9F3] text-[#29152F]">
           <Navbar />
+          
           <Hero />
           <Features />
           <ShopByCategory />
